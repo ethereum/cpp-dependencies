@@ -21,6 +21,8 @@ if %PLATFORM% == Win32 (
         cmake -E copy ..\..\build\curl\build\lib\Debug\libcurl_imp.exp lib\libcurld.exp
         cmake -E copy ..\..\build\curl\build\lib\Debug\libcurl_imp.lib lib\libcurld.lib
     )
+
+    cmake -E copy ..\..\build\curl\build\include\curl\curlbuild.h include\curl\curlbuild.h
 )
 
 if %PLATFORM% == x64 (
@@ -37,6 +39,8 @@ if %PLATFORM% == x64 (
         cmake -E copy ..\..\build\curl\build64\lib\Debug\libcurl_imp.exp lib\libcurld_x64.exp
         cmake -E copy ..\..\build\curl\build64\lib\Debug\libcurl_imp.lib lib\libcurld_x64.lib
     )
+
+    cmake -E copy ..\..\build\curl\build64\include\curl\curlbuild.h include\curl\curlbuild.h
 )
 
 cmake -E copy_directory ..\..\build\curl\include\curl include\curl
