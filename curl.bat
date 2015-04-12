@@ -6,8 +6,8 @@ git checkout -qf 139141f8d73eb5820a64b100485572a263f4156b
 REM create curl build dirs
 if %PLATFORM% == Win32 if not exist build mkdir build
 if %PLATFORM% == Win32 cd build
-if %PLATFORM% == x64 if not exist build64 mkdir buildx64
-if %PLATFORM% == x64 cd buildx64
+if %PLATFORM% == x64 if not exist build64 mkdir build64
+if %PLATFORM% == x64 cd build64
 
 REM run curl cmake
 if %PLATFORM% == Win32 cmake ..
@@ -18,4 +18,12 @@ REM build curl
 
 REM curl built
 cd ..\..\..
+
+REM packaging curl
+if not exist package\curl mkdir package\curl
+if not exist package\curl\lib mkdir package\curl\lib
+if not exist package\curl\include mkdir package\curl\include
+if not exist package\curl\include\curl mkdir package\curl\include\curl
+
+cd package\curl\lib
 
