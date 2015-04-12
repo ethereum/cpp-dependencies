@@ -14,7 +14,7 @@ if %PLATFORM% == Win32 cmake ..
 if %PLATFORM% == x64 cmake -G "Visual Studio 12 2013 Win64" ..
 
 REM build jsoncpp
-%MSBuild% jsoncpp.sln /property:Configuration=%CONFIGURATION% /property:Platform=%PLATFORM%
+%MSBuild% jsoncpp.sln /property:Configuration=%CONFIGURATION% /property:Platform=%PLATFORM% /verbosity:minimal
 
 REM jsoncpp built
 cd ..\..\..

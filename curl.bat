@@ -14,7 +14,7 @@ if %PLATFORM% == Win32 cmake ..
 if %PLATFORM% == x64 cmake -G "Visual Studio 12 2013 Win64" ..
 
 REM build curl
-%MSBuild% CURL.sln /property:Configuration=%CONFIGURATION% /property:Platform=%PLATFORM%
+%MSBuild% CURL.sln /property:Configuration=%CONFIGURATION% /property:Platform=%PLATFORM% /target:libcurl /verbosity:minimal
 
 REM curl built
 cd ..\..\..
