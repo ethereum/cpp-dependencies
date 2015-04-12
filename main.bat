@@ -1,6 +1,7 @@
-REM create directories
-REM build dir will be used to downlaod && build dependencies
+REM add MSBuild to env variable
+set MSBuild:="\"c:/Program Files (x86)/MSBuild/12.0/bin/msbuild.exe\"";%MSBuild%
 
+REM create build directory
 mkdir build
 
 set PLATFORM=Win32 & set CONFIGURATION=Debug   & jsoncpp.bat || goto :error
