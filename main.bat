@@ -14,6 +14,11 @@ set PLATFORM=Win32 & set CONFIGURATION=Release & call curl.bat || goto :error
 set PLATFORM=x64   & set CONFIGURATION=Debug   & call curl.bat || goto :error
 set PLATFORM=x64   & set CONFIGURATION=Release & call curl.bat || goto :error
 
+set PLATFORM=Win32 & set CONFIGURATION=Debug   & call microhttpd.bat || goto :error
+set PLATFORM=Win32 & set CONFIGURATION=Release & call microhttpd.bat || goto :error
+set PLATFORM=x64   & set CONFIGURATION=Debug   & call microhttpd.bat || goto :error
+set PLATFORM=x64   & set CONFIGURATION=Release & call microhttpd.bat || goto :error
+
 goto :EOF
 
 :error
