@@ -9,6 +9,11 @@ set PLATFORM=Win32 & set CONFIGURATION=Release & call jsoncpp.bat || goto :error
 set PLATFORM=x64   & set CONFIGURATION=Debug   & call jsoncpp.bat || goto :error
 set PLATFORM=x64   & set CONFIGURATION=Release & call jsoncpp.bat || goto :error
 
+set PLATFORM=Win32 & set CONFIGURATION=Debug   & call curl.bat || goto :error
+set PLATFORM=Win32 & set CONFIGURATION=Release & call curl.bat || goto :error
+set PLATFORM=x64   & set CONFIGURATION=Debug   & call curl.bat || goto :error
+set PLATFORM=x64   & set CONFIGURATION=Release & call curl.bat || goto :error
+
 goto :EOF
 
 :error
