@@ -21,6 +21,11 @@ set PLATFORM=Win32 & set CONFIGURATION=Release & call build_curl.bat        & ca
 set PLATFORM=x64   & set CONFIGURATION=Debug   & call build_curl.bat        & call bundle_curl.bat goto :error
 set PLATFORM=x64   & set CONFIGURATION=Release & call build_curl.bat        & call bundle_curl.bat goto :error
 
+set PLATFORM=Win32 & set CONFIGURATION=Debug   & call build_jsonrpccpp.bat  & call bundle_jsonrpccpp.bat goto :error
+set PLATFORM=Win32 & set CONFIGURATION=Release & call build_jsonrpccpp.bat  & call bundle_jsonrpccpp.bat goto :error
+set PLATFORM=x64   & set CONFIGURATION=Debug   & call build_jsonrpccpp.bat  & call bundle_jsonrpccpp.bat goto :error
+set PLATFORM=x64   & set CONFIGURATION=Release & call build_jsonrpccpp.bat  & call bundle_jsonrpccpp.bat goto :error
+
 goto :EOF
 
 :error

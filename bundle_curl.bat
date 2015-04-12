@@ -25,13 +25,13 @@ if %PLATFORM% == Win32 (
 
 if %PLATFORM% == x64 (
     if %CONFIGURATION% == Release (
-        cmake -E copy ..\..\build\curl\build64\lib\Release\libcurl.dll dll\libcurl_x64.dll
+        cmake -E copy ..\..\build\curl\build64\lib\Release\libcurl.dll bin\libcurl_x64.dll
         cmake -E copy ..\..\build\curl\build64\lib\Release\libcurl_imp.exp lib\libcurl_x64.exp
         cmake -E copy ..\..\build\curl\build64\lib\Release\libcurl_imp.lib lib\libcurl_x64.lib
     )
 
     if %CONFIGURATION% == Debug (
-        cmake -E copy ..\..\build\curl\build64\lib\Debug\libcurl.dll dll\libcurld_x64.dll
+        cmake -E copy ..\..\build\curl\build64\lib\Debug\libcurl.dll bin\libcurld_x64.dll
         cmake -E copy ..\..\build\curl\build64\lib\Debug\libcurl.ilk lib\libcurld_x64.ilk
         cmake -E copy ..\..\build\curl\build64\lib\Debug\libcurl.pdb lib\libcurld_x64.pdb
         cmake -E copy ..\..\build\curl\build64\lib\Debug\libcurl_imp.exp lib\libcurld_x64.exp
