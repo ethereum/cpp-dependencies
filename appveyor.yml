@@ -21,7 +21,7 @@ configuration:
 build_script:
     - cmake --version
     - cd c:\projects\cpp-dependencies
-    #- call jsoncpp.bat
-    #- call curl.bat
-    - call microhttpd.bat
+    - call build_jsoncpp.bat
+    - call build_microhttpd.bat
+    - call build_curl.bat
 

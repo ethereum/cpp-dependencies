@@ -19,11 +19,3 @@ REM build curl
 REM curl built
 cd ..\..\..
 
-REM packaging curl
-if not exist package\curl mkdir package\curl
-if not exist package\curl\lib mkdir package\curl\lib
-if not exist package\curl\include mkdir package\curl\include
-if not exist package\curl\include\curl mkdir package\curl\include\curl
-
-cd package\curl\lib
-
