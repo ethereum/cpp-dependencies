@@ -21,5 +21,6 @@ configuration:
 build_script:
     - cmake --version
     - cd c:\projects\cpp-dependencies
-    - jsoncpp.bat
+    - call jsoncpp.bat
+    - call curl.bat
 
