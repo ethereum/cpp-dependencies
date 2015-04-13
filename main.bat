@@ -36,6 +36,12 @@ set PLATFORM=x64   & set CONFIGURATION=Debug   & call build_leveldb.bat     & ca
 set PLATFORM=x64   & set CONFIGURATION=Release & call build_leveldb.bat     & call bundle_leveldb.bat goto :error
 call install_leveldb.bat || goto :error
 
+set PLATFORM=Win32 & set CONFIGURATION=Debug   & call build_cryptopp.bat    & call bundle_cryptopp.bat goto :error
+set PLATFORM=Win32 & set CONFIGURATION=Release & call build_cryptopp.bat    & call bundle_cryptopp.bat goto :error
+set PLATFORM=x64   & set CONFIGURATION=Debug   & call build_cryptopp.bat    & call bundle_cryptopp.bat goto :error
+set PLATFORM=x64   & set CONFIGURATION=Release & call build_cryptopp.bat    & call bundle_cryptopp.bat goto :error
+call install_cryptopp.bat || goto :error
+
 goto :EOF
 
 :error
