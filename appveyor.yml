@@ -13,8 +13,8 @@ platform:
     - Win32
     - x64
 
-configuration:
-    - Debug
+#configuration:
+    #- Debug
     #- Release , this will be set later
 
 # scripts to run before build
@@ -22,7 +22,7 @@ build_script:
     - cmake --version
     - cd c:\projects\cpp-dependencies
 
-    - REM set CONFIGURATION=Debug
+    - set CONFIGURATION=Debug
     
     - call build_jsoncpp.bat
     - call bundle_jsoncpp.bat
