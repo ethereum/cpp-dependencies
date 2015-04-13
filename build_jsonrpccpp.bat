@@ -1,3 +1,4 @@
+set CURRENTDIR="%cd%"
 REM clone jsonrpccpp
 if not exist build\jsonrpccpp git clone -q https://github.com/debris/libjson-rpc-cpp build\jsonrpccpp
 cd build\jsonrpccpp
@@ -10,8 +11,8 @@ if %PLATFORM% == x64 if not exist build64 mkdir build64
 if %PLATFORM% == x64 cd build64
 
 REM run jsonrpccpp cmake
-if %PLATFORM% == Win32 cmake -DCMAKE_PREFIX_PATH="..\..\install" -DCOMPILE_STUBGEN=NO -DCOMPILE_TESTS=NO ..
-if %PLATFORM% == x64 cmake -G "Visual Studio 12 2013 Win64" -DCMAKE_PREFIX_PATH="..\..\install" -DCOMPILE_STUBGEN=NO -DCOMPILE_TESTS=NO ..
+if %PLATFORM% == Win32 cmake -DCMAKE_PREFIX_PATH="%CURRENTDIR%\install" -DCOMPILE_STUBGEN=NO -DCOMPILE_TESTS=NO ..
+if %PLATFORM% == x64 cmake -G "Visual Studio 12 2013 Win64" -DCMAKE_PREFIX_PATH="%CURRENTDIR%\install" -DCOMPILE_STUBGEN=NO -DCOMPILE_TESTS=NO ..
 
 REM build jsonrpccpp
 %MSBuild% libjson-rpc-cpp.sln /property:Configuration=%CONFIGURATION% /property:Platform=%PLATFORM% /verbosity:minimal
