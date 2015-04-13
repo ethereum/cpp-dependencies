@@ -2,6 +2,7 @@ REM packaging jsonrpccpp
 if not exist package\jsonrpccpp mkdir package\jsonrpccpp
 if not exist package\jsonrpccpp\lib mkdir package\jsonrpccpp\lib
 if not exist package\jsonrpccpp\include mkdir package\jsonrpccpp\include
+if not exist package\jsonrpccpp\include\jsonrpccpp mkdir package\jsonrpccpp\include\jsonrpccpp
 
 cd package\jsonrpccpp
 
@@ -32,6 +33,8 @@ if %PLATFORM% == x64 (
         cmake -E copy ..\..\build\jsonrpccpp\build64\lib\Debug\jsonrpccpp-server.lib lib\jsonrpccpp-serverd_x64.lib
     )
 )
+
+xcopy ..\..\build\jsonrpccpp\src\jsonrpccpp\*.h include\jsonrpccpp /sy
 
 cd ..\..
 
