@@ -10,21 +10,25 @@ set PLATFORM=Win32 & set CONFIGURATION=Debug   & call build_jsoncpp.bat     & ca
 set PLATFORM=Win32 & set CONFIGURATION=Release & call build_jsoncpp.bat     & call bundle_jsoncpp.bat || goto :error
 set PLATFORM=x64   & set CONFIGURATION=Debug   & call build_jsoncpp.bat     & call bundle_jsoncpp.bat || goto :error
 set PLATFORM=x64   & set CONFIGURATION=Release & call build_jsoncpp.bat     & call bundle_jsoncpp.bat || goto :error
+call install_jsoncpp.bat || goto :error
 
 set PLATFORM=Win32 & set CONFIGURATION=Debug   & call build_microhttpd.bat  & call bundle_microhttpd.bat || goto :error
 set PLATFORM=Win32 & set CONFIGURATION=Release & call build_microhttpd.bat  & call bundle_microhttpd.bat || goto :error
 set PLATFORM=x64   & set CONFIGURATION=Debug   & call build_microhttpd.bat  & call bundle_microhttpd.bat || goto :error
 set PLATFORM=x64   & set CONFIGURATION=Release & call build_microhttpd.bat  & call bundle_microhttpd.bat || goto :error
+call install_microhttpd.bat || goto :error
 
 set PLATFORM=Win32 & set CONFIGURATION=Debug   & call build_curl.bat        & call bundle_curl.bat goto :error
 set PLATFORM=Win32 & set CONFIGURATION=Release & call build_curl.bat        & call bundle_curl.bat goto :error
 set PLATFORM=x64   & set CONFIGURATION=Debug   & call build_curl.bat        & call bundle_curl.bat goto :error
 set PLATFORM=x64   & set CONFIGURATION=Release & call build_curl.bat        & call bundle_curl.bat goto :error
+call install_curl.bat || goto :error
 
 set PLATFORM=Win32 & set CONFIGURATION=Debug   & call build_jsonrpccpp.bat  & call bundle_jsonrpccpp.bat goto :error
 set PLATFORM=Win32 & set CONFIGURATION=Release & call build_jsonrpccpp.bat  & call bundle_jsonrpccpp.bat goto :error
 set PLATFORM=x64   & set CONFIGURATION=Debug   & call build_jsonrpccpp.bat  & call bundle_jsonrpccpp.bat goto :error
 set PLATFORM=x64   & set CONFIGURATION=Release & call build_jsonrpccpp.bat  & call bundle_jsonrpccpp.bat goto :error
+call install_jsonrpccpp || goto :error
 
 goto :EOF
 
