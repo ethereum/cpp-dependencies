@@ -1,6 +1,6 @@
 REM packaging jsonrpccpp
 if not exist package\jsonrpccpp mkdir package\jsonrpccpp
-if not exist package\jsonrpccpp\lib mkdir package\jsonepccpp\lib
+if not exist package\jsonrpccpp\lib mkdir package\jsonrpccpp\lib
 if not exist package\jsonrpccpp\include mkdir package\jsonrpccpp\include
 
 cd package\jsonrpccpp
