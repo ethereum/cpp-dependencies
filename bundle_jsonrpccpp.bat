@@ -18,6 +18,8 @@ if %PLATFORM% == Win32 (
         cmake -E copy ..\..\build\jsonrpccpp\build\lib\Debug\jsonrpccpp-client.lib lib\jsonrpccpp-clientd.lib
         cmake -E copy ..\..\build\jsonrpccpp\build\lib\Debug\jsonrpccpp-server.lib lib\jsonrpccpp-serverd.lib
     )
+    
+    xcopy ..\..\build\jsonrpccpp\build\gen\jsonrpccpp\*.h include\jsonrpccpp /sy
 )
 
 if %PLATFORM% == x64 (
@@ -32,6 +34,8 @@ if %PLATFORM% == x64 (
         cmake -E copy ..\..\build\jsonrpccpp\build64\lib\Debug\jsonrpccpp-client.lib lib\jsonrpccpp-clientd_x64.lib
         cmake -E copy ..\..\build\jsonrpccpp\build64\lib\Debug\jsonrpccpp-server.lib lib\jsonrpccpp-serverd_x64.lib
     )
+
+    xcopy ..\..\build\jsonrpccpp\build64\gen\jsonrpccpp\*.h include\jsonrpccpp /sy
 )
 
 xcopy ..\..\build\jsonrpccpp\src\jsonrpccpp\*.h include\jsonrpccpp /sy
