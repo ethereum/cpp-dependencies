@@ -46,8 +46,12 @@ if %PLATFORM% == x64 (
 cmake -E copy_directory ..\..\build\curl\include\curl include\curl
 cd ..\..
 
-REM curl packaged
+REM zipping curl
+cd package
+cmake -E rename curl curl-7.4.2
+tar -zcvf curl-7.4.2.tar.gz curl-7.4.2
+cd ..
 
 REM installing curl
-cmake -E copy_directory package\curl install
+cmake -E copy_directory package\curl-7.4.2 install
 
