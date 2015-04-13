@@ -15,7 +15,8 @@ if %PLATFORM% == Win32 cmake -DCMAKE_PREFIX_PATH="%CURRENTDIR%\install" -DCOMPIL
 if %PLATFORM% == x64 cmake -G "Visual Studio 12 2013 Win64" -DCMAKE_PREFIX_PATH="%CURRENTDIR%\install" -DCOMPILE_STUBGEN=NO -DCOMPILE_TESTS=NO ..
 
 REM build jsonrpccpp
-%MSBuild% libjson-rpc-cpp.sln /property:Configuration=%CONFIGURATION% /property:Platform=%PLATFORM% /verbosity:minimal
+%MSBuild% libjson-rpc-cpp.sln /property:Configuration=%CONFIGURATION% /property:Platform=%PLATFORM% /target:jsonrpcclientStatic /verbosity:minimal
+%MSBuild% libjson-rpc-cpp.sln /property:Configuration=%CONFIGURATION% /property:Platform=%PLATFORM% /target:jsonrpcserverStatic /verbosity:minimal
 
 REM jsonrpcpp built
 cd ..\..\..
