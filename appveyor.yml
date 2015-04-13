@@ -17,40 +17,42 @@ platform:
     #- Debug
     #- Release , this will be set later
 
+build: off # temporarily
+
 # scripts to run before build
-build_script:
-    - cmake --version
-    - cd c:\projects\cpp-dependencies
+#build_script:
+    #- cmake --version
+    #- cd c:\projects\cpp-dependencies
 
-    - set CONFIGURATION=Debug
+    #- set CONFIGURATION=Debug
     
-    - call build_jsoncpp.bat
-    - call bundle_jsoncpp.bat
+    #- call build_jsoncpp.bat
+    #- call bundle_jsoncpp.bat
 
-    - call build_microhttpd.bat
-    - call bundle_microhttpd.bat
+    #- call build_microhttpd.bat
+    #- call bundle_microhttpd.bat
 
-    - call build_curl.bat
-    - call bundle_curl.bat
+    #- call build_curl.bat
+    #- call bundle_curl.bat
 
-    - set CONFIGURATION=Relase
+    #- set CONFIGURATION=Relase
 
-    - call build_jsoncpp.bat
-    - call bundle_jsoncpp.bat
+    #- call build_jsoncpp.bat
+    #- call bundle_jsoncpp.bat
 
-    - call build_microhttpd.bat
-    - call bundle_microhttpd.bat
+    #- call build_microhttpd.bat
+    #- call bundle_microhttpd.bat
 
-    - call build_curl.bat
-    - call bundle_curl.bat
+    #- call build_curl.bat
+    #- call bundle_curl.bat
 
-    - set CONFIGURATION=Debug
+    #- set CONFIGURATION=Debug
 
-    - call build_jsonrpccpp.bat
-    - call bundle_jsonrpccpp.bat
+    #- call build_jsonrpccpp.bat
+    #- call bundle_jsonrpccpp.bat
 
-    - set CONFIGURATION=Release
+    #- set CONFIGURATION=Release
 
-    - call build_jsonrpccpp.bat
-    - call bundle_jsonrpccpp.bat
+    #- call build_jsonrpccpp.bat
+    #- call bundle_jsonrpccpp.bat
 
