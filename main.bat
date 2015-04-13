@@ -42,6 +42,8 @@ set PLATFORM=x64   & set CONFIGURATION=Debug   & call build_cryptopp.bat    & ca
 set PLATFORM=x64   & set CONFIGURATION=Release & call build_cryptopp.bat    & call bundle_cryptopp.bat goto :error
 call install_cryptopp.bat || goto :error
 
+set PLATFORM=Win32 & call build_boost.bat
+
 goto :EOF
 
 :error
