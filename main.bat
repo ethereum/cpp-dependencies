@@ -45,8 +45,9 @@ call :setup x64 Debug     & call build_cryptopp.bat    & call bundle_cryptopp.ba
 call :setup x64 Release   & call build_cryptopp.bat    & call bundle_cryptopp.bat goto :error
 call install_cryptopp.bat || goto :error
 
-call :setup Win32 both    & call build_boost.bat
-call :setup x64 both      & call build_boost.bat
+call :setup Win32 both    & call build_boost.bat       & call bundle_boost.bat goto :error
+call :setup x64 both      & call build_boost.bat       & call bundle_boost.bat goto :error
+call install_boost.bat
 
 goto :EOF
 
