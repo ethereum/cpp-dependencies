@@ -1,6 +1,9 @@
 REM add MSBuild to env variable
 set MSBuild="c:/Program Files (x86)/MSBuild/12.0/bin/msbuild.exe"
 
+REM add vcvars32.bat to PATH
+@set PATH=c:/Program Files (x86)/Microsoft Visual Studio 12.0/VC/bin;%PATH%
+
 REM create build, package && install directory
 if not exist build mkdir build
 if not exist package mkdir package
@@ -43,6 +46,7 @@ set PLATFORM=x64   & set CONFIGURATION=Release & call build_cryptopp.bat    & ca
 call install_cryptopp.bat || goto :error
 
 set PLATFORM=Win32 & call build_boost.bat
+set PLATFORM=x64 & call build_boost.bat
 
 goto :EOF
 
