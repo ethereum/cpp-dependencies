@@ -1,8 +1,8 @@
 REM packaging leveldb
 if not exist package\leveldb mkdir package\leveldb
 if not exist package\leveldb\%PLATFORM% mkdir package\leveldb\%PLATFORM%
-if not exist package\leveldb\lib\%PLATFORM% mkdir package\leveldb\lib\%PLATFORM%
-if not exist package\leveldb\include\%PLATFORM% mkdir package\leveldb\include\%PLATFORM%
+if not exist package\leveldb\%PLATFORM%lib\ mkdir package\leveldb\%PLATFORM%\lib
+if not exist package\leveldb\%PLATFORM%\include mkdir package\leveldb\%PLATFORM%\include
 
 cd package\leveldb\%PLATFORM%
 
