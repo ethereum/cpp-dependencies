@@ -13,6 +13,7 @@ download, compile && prepare cpp-ethereum dependencies for windows
 * cmake 3.0
 * VisualStudio 2013 Community
 * tar
+* curl
 
 ### Run
 
