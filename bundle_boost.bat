@@ -8,8 +8,8 @@ if not exist package\boost\%PLATFORM%\include\boost mkdir package\boost\%PLATFOR
 
 cd package\boost\%PLATFORM%
 
-if %CONFIGURATION% == Release cmake -E copy_directory ..\..\..\build\boost\boost\boost include\boost
-if %CONFIGURATION% == Release cmake -E copy_directory ..\..\..\build\boost\boost\stage\%PLATFORM% lib
+cmake -E copy_directory ..\..\..\build\boost\boost\boost include\boost
+cmake -E copy_directory ..\..\..\build\boost\boost\stage\%PLATFORM% lib
 
 cd ..\..\..
 
