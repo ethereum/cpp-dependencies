@@ -1,9 +1,9 @@
 REM packaging jsonrpccpp
 if not exist package\jsonrpccpp mkdir package\jsonrpccpp
 if not exist package\jsonrpccpp\%PLATFORM% mkdir package\jsonrpccpp\%PLATFORM%
-if not exist package\jsonrpccpp\lib\%PLATFORM% mkdir package\jsonrpccpp\lib\%PLATFORM%
-if not exist package\jsonrpccpp\include\%PLATFORM% mkdir package\jsonrpccpp\include\%PLATFORM%
-if not exist package\jsonrpccpp\include\jsonrpccpp\%PLATFORM% mkdir package\jsonrpccpp\include\jsonrpccpp\%PLATFORM%
+if not exist package\jsonrpccpp\%PLATFORM%\lib mkdir package\jsonrpccpp\%PLATFORM%\lib
+if not exist package\jsonrpccpp\%PLATFORM%\include mkdir package\jsonrpccpp\%PLATFORM%\include
+if not exist package\jsonrpccpp\%PLATFORM%\include\jsonrpccpp mkdir package\jsonrpccpp\%PLATFORM%\include\jsonrpccpp
 
 cd package\jsonrpccpp\%PLATFORM%
 
