@@ -9,15 +9,16 @@ if not exist package\miniupnpc\%PLATFORM%\include\miniupnpc mkdir package\miniup
 cd package\miniupnpc\%PLATFORM%
 
 if %PLATFORM% == Win32 (
-    if %CONFIGURATION% == Release cmake -E copy ..\..\..\build\miniupnpc\build\src\lib_json\Release\miniupnpc.lib lib\miniupnpc.lib
-    if %CONFIGURATION% == Debug cmake -E copy ..\..\..\build\miniupnpc\build\src\lib_json\Debug\miniupnpc.lib lib\miniupnpcd.lib
+    if %CONFIGURATION% == Release cmake -E copy ..\..\..\build\miniupnpc\miniupnpc\build\Release\miniupnpc.lib lib\miniupnpc.lib
+    if %CONFIGURATION% == Debug cmake -E copy ..\..\..\build\miniupnpc\miniupnpc\build\Debug\miniupnpc.lib lib\miniupnpcd.lib
 )
 
 if %PLATFORM% == x64 (
-    if %CONFIGURATION% == Release cmake -E copy ..\..\..\build\miniupnpc\build64\src\lib_json\Release\miniupnpc.lib lib\miniupnpc.lib
-    if %CONFIGURATION% == Debug cmake -E copy ..\..\..\build\miniupnpc\build64\src\lib_json\Debug\miniupnpc.lib lib\miniupnpcd.lib
+    if %CONFIGURATION% == Release cmake -E copy ..\..\..\build\miniupnpc\miniupnpc\build64\Release\miniupnpc.lib lib\miniupnpc.lib
+    if %CONFIGURATION% == Debug cmake -E copy ..\..\..\build\miniupnpc\miniupnpc\build64\Debug\miniupnpc.lib lib\miniupnpcd.lib
 )
 
-cmake -E copy_directory ..\..\..\build\miniupnpc\include\miniupnpc include\miniupnpc
+xcopy ..\..\..\build\miniupnpc\miniupnpc\*.h include\miniupnpc /sy
+
 cd ..\..\..
 
