@@ -1,3 +1,6 @@
+REM call vcvarsall
+call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat"
+
 REM add MSBuild to env variable
 set MSBuild="c:/Program Files (x86)/MSBuild/12.0/bin/msbuild.exe"
 
@@ -48,6 +51,12 @@ call :setup Win32 Release & call build_leveldb.bat     & call bundle_leveldb.bat
 call :setup x64 Debug     & call build_leveldb.bat     & call bundle_leveldb.bat || goto :error
 call :setup x64 Release   & call build_leveldb.bat     & call bundle_leveldb.bat || goto :error
 call install_leveldb.bat || goto :error
+
+call :setup Win32 Debug   & call build_miniupnpc.bat     & call bundle_miniupnpc.bat || goto :error
+call :setup Win32 Release & call build_miniupnpc.bat     & call bundle_miniupnpc.bat || goto :error
+call :setup x64 Debug     & call build_miniupnpc.bat     & call bundle_miniupnpc.bat || goto :error
+call :setup x64 Release   & call build_miniupnpc.bat     & call bundle_miniupnpc.bat || goto :error
+call install_miniupnpc.bat || goto :error
 
 goto :EOF
 
