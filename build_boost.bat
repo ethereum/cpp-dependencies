@@ -15,8 +15,8 @@ REM build boost
 if not exist b2.exe call bootstrap.bat
 
 if not exist "stage/%PLATFORM%" (
-    if %PLATFORM% == Win32 b2.exe -j4 --build-type=complete link=static runtime-link=shared variant=debug,release threading=multi --with-filesystem --with-system --with-thread --with-date_time --with-regex --with-test --with-program_options --with-random stage
-    if %PLATFORM% == x64 b2.exe -j4 --build-type=complete link=static runtime-link=shared variant=debug,release threading=multi address-model=64 --with-filesystem --with-system --with-thread --with-date_time --with-regex --with-test --with-program_options --with-random stage
+    if %PLATFORM% == Win32 b2.exe -j4 --build-type=complete link=static runtime-link=shared variant=debug,release threading=multi --with-filesystem --with-system --with-thread --with-date_time --with-regex --with-test --with-program_options --with-random --with-atomic stage
+    if %PLATFORM% == x64 b2.exe -j4 --build-type=complete link=static runtime-link=shared variant=debug,release threading=multi address-model=64 --with-filesystem --with-system --with-thread --with-date_time --with-regex --with-test --with-program_options --with-random --with-atomic stage
     cmake -E rename stage/lib stage/%PLATFORM%
 )
 
