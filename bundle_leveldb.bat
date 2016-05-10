@@ -12,8 +12,8 @@ if %PLATFORM% == Win32 (
 )
 
 if %PLATFORM% == x64 (
-    if %CONFIGURATION% == Release cmake -E copy ..\..\..\build\leveldb\win\x64\Release\LibLevelDB.lib lib\leveldb.lib
-    if %CONFIGURATION% == Debug cmake -E copy ..\..\..\build\leveldb\win\x64\Debug\LibLevelDB.lib lib\leveldbd.lib
+    if %CONFIGURATION% == Release cmake -E copy ..\..\..\build\leveldb\win\x64\Release\LevelDB64.lib lib\leveldb.lib
+    if %CONFIGURATION% == Debug cmake -E copy ..\..\..\build\leveldb\win\x64\Debug\LevelDB64.lib lib\leveldbd.lib
 )
 
 cmake -E copy_directory ..\..\..\build\leveldb\include include
