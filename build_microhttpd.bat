@@ -1,11 +1,10 @@
 REM clone microhttpd
-if not exist build\microhttpd git clone -q https://github.com/debris/libmicrohttpd build\microhttpd
-cd build\microhttpd\w32\VS2013
-git checkout -qf 55e4a9221ce5a70a254e0e55e89c4564df2c3b42
+if not exist build\microhttpd git clone -q https://github.com/svn2github/libmicrohttpd build\microhttpd
+cd build\microhttpd\w32\VS2015
+git checkout -qf 82ee737a39be28a32048248655d780ad8a240939
 
 REM build microhttpd
-%MSBuild% libmicrohttpd.sln /property:Configuration=%CONFIGURATION% /property:Platform=%PLATFORM% /target:libmicrohttpd /verbosity:minimal
+%MSBuild% libmicrohttpd.sln /property:Configuration=%CONFIGURATION%-dll /property:Platform=%PLATFORM% /target:libmicrohttpd /verbosity:minimal
 
 REM microhttpd built
 cd ..\..\..\..
-
