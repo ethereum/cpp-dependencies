@@ -1,11 +1,11 @@
 REM call vcvarsall
-call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat"
+call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat"
 
 REM add MSBuild to env variable
-set MSBuild="c:/Program Files (x86)/MSBuild/12.0/bin/msbuild.exe"
+set MSBuild="c:/Program Files (x86)/MSBuild/14.0/bin/msbuild.exe"
 
 REM add vcvars32.bat to PATH
-@set PATH=c:/Program Files (x86)/Microsoft Visual Studio 12.0/VC/bin;%PATH%
+@set PATH=c:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin;%PATH%
 
 REM create build, package && install directory
 if not exist build mkdir build
@@ -32,9 +32,6 @@ call :setup x64 Debug     & call build_cryptopp.bat    & call bundle_cryptopp.ba
 call :setup x64 Release   & call build_cryptopp.bat    & call bundle_cryptopp.bat || goto :error
 call install_cryptopp.bat || goto :error
 
-call :setup x64 both      & call build_boost.bat       & call bundle_boost.bat || goto :error
-call install_boost.bat
-
 call :setup x64 Debug     & call build_leveldb.bat     & call bundle_leveldb.bat || goto :error
 call :setup x64 Release   & call build_leveldb.bat     & call bundle_leveldb.bat || goto :error
 call install_leveldb.bat || goto :error
@@ -56,4 +53,3 @@ echo Failed with error %errorlevel%
 exit /b %errorlevel%
 
 :EOF
-
