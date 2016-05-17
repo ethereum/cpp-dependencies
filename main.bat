@@ -32,9 +32,6 @@ call :setup x64 Debug     & call build_cryptopp.bat    & call bundle_cryptopp.ba
 call :setup x64 Release   & call build_cryptopp.bat    & call bundle_cryptopp.bat || goto :error
 call install_cryptopp.bat || goto :error
 
-call :setup x64 both      & call build_boost.bat       & call bundle_boost.bat || goto :error
-call install_boost.bat
-
 call :setup x64 Debug     & call build_leveldb.bat     & call bundle_leveldb.bat || goto :error
 call :setup x64 Release   & call build_leveldb.bat     & call bundle_leveldb.bat || goto :error
 call install_leveldb.bat || goto :error
@@ -56,4 +53,3 @@ echo Failed with error %errorlevel%
 exit /b %errorlevel%
 
 :EOF
-
