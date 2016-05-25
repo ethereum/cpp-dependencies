@@ -4,7 +4,7 @@ cd build\leveldb\win
 
 REM build leveldb
 @echo build leveldb
-%MSBuild% LevelDB.sln /property:Configuration=%CONFIGURATION% /property:Platform=%PLATFORM% /verbosity:minimal
+%MSBuild% LibLevelDB.sln /property:Configuration=%CONFIGURATION% /property:Platform=%PLATFORM% /verbosity:minimal
 
 @echo built
 REM leveldb built
