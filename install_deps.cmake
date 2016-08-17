@@ -15,6 +15,7 @@ download_and_install("json-rpc-cpp-0.5.0")
 download_and_install("jsoncpp-1.6.2")
 download_and_install("opencl-icd-loader-0.0")
 download_and_install("leveldb-1.2")
-download_and_install("llvm-3.8.0")
+# Disable installing LLVM. It is now built within evmjit project.
+# download_and_install("llvm-3.8.0")
 download_and_install("microhttpd-0.9.2")
 download_and_install("miniupnpc-1.9")
