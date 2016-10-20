@@ -4,7 +4,6 @@ ExternalProject_Add(jsoncpp-project
     PREFIX deps/jsoncpp
     URL https://github.com/open-source-parsers/jsoncpp/archive/1.7.7.tar.gz
     URL_HASH SHA256=087640ebcf7fbcfe8e2717a0b9528fff89c52fcf69fa2a18cc2b538008098f97
-    DOWNLOAD_NO_PROGRESS True
     CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
                # Build static lib but suitable to be included in a shared lib.
                -DCMAKE_POSITION_INDEPENDENT_CODE=On
