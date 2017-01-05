@@ -9,7 +9,6 @@ endfunction(download_and_install)
 
 
 download_and_install("boost-1.61")
-download_and_install("cryptopp-5.6.2")
 download_and_install("curl-7.4.2")
 download_and_install("opencl-icd-loader-0.0")
 download_and_install("leveldb-1.2")
