@@ -1,4 +1,5 @@
 include(ExternalProject)
+include(GNUInstallDirs)
 
 # Support Emscripten builds by overwritting CMAKE_COMMAND.
 if (${CMAKE_SYSTEM_NAME} STREQUAL "Emscripten")
@@ -36,9 +37,9 @@ ExternalProject_Add(cryptopp-project
 ExternalProject_Get_Property(cryptopp-project INSTALL_DIR)
 add_library(cryptopp STATIC IMPORTED)
 if (MSVC)
-    set(CRYPTOPP_LIBRARY ${INSTALL_DIR}/lib/${CMAKE_STATIC_LIBRARY_PREFIX}cryptopp-static${CMAKE_STATIC_LIBRARY_SUFFIX})
+    set(CRYPTOPP_LIBRARY ${INSTALL_DIR}/${CMAKE_INSTALL_LIBDIR}/${CMAKE_STATIC_LIBRARY_PREFIX}cryptopp-static${CMAKE_STATIC_LIBRARY_SUFFIX})
 else()
-    set(CRYPTOPP_LIBRARY ${INSTALL_DIR}/lib/${CMAKE_STATIC_LIBRARY_PREFIX}cryptopp${CMAKE_STATIC_LIBRARY_SUFFIX})
+    set(CRYPTOPP_LIBRARY ${INSTALL_DIR}/${CMAKE_INSTALL_LIBDIR}/${CMAKE_STATIC_LIBRARY_PREFIX}cryptopp${CMAKE_STATIC_LIBRARY_SUFFIX})
 endif()
 set(CRYPTOPP_INCLUDE_DIR ${INSTALL_DIR}/include)
 file(MAKE_DIRECTORY ${CRYPTOPP_INCLUDE_DIR})  # Must exist.
