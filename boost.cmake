@@ -31,6 +31,7 @@ ExternalProject_Add(boost-project
         link=static
         variant=release
         address-model=64
+        -d0
         --with-chrono
         --with-date_time
         --with-filesystem
