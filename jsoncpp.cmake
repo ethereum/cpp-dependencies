@@ -21,6 +21,8 @@ ExternalProject_Add(jsoncpp-project
     URL_HASH SHA256=087640ebcf7fbcfe8e2717a0b9528fff89c52fcf69fa2a18cc2b538008098f97
     CMAKE_COMMAND ${JSONCPP_CMAKE_COMMAND}
     CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
+               -DCMAKE_C_COMPILER=${CMAKE_C_COMPILER}
+               -DCMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}
                # Build static lib but suitable to be included in a shared lib.
                -DCMAKE_POSITION_INDEPENDENT_CODE=On
                -DJSONCPP_WITH_TESTS=Off
