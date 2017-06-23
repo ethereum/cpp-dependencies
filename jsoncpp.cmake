@@ -6,6 +6,13 @@ else()
     set(JSONCPP_CMAKE_COMMAND ${CMAKE_COMMAND})
 endif()
 
+# Disable implicit fallthrough warning in jsoncpp for gcc >= 7 until the upstream handles it properly
+if (("${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU") AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 7.0)
+    set(JSONCCP_EXTRA_FLAGS -Wno-implicit-fallthrough)
+else()
+    set(JSONCCP_EXTRA_FLAGS "")
+endif()
+
 ExternalProject_Add(jsoncpp-project
     PREFIX deps/jsoncpp
     DOWNLOAD_NAME jsoncpp-1.7.7.tar.gz
@@ -18,7 +25,8 @@ ExternalProject_Add(jsoncpp-project
                -DCMAKE_POSITION_INDEPENDENT_CODE=On
                -DJSONCPP_WITH_TESTS=Off
                -DJSONCPP_WITH_PKGCONFIG_SUPPORT=Off
-    # Overwtire build and install commands to force Release build on MSVC.
+               -DCMAKE_CXX_FLAGS=${JSONCCP_EXTRA_FLAGS}
+    # Overwrite build and install commands to force Release build on MSVC.
     BUILD_COMMAND cmake --build <BINARY_DIR> --config Release
     INSTALL_COMMAND cmake --build <BINARY_DIR> --config Release --target install
 )
